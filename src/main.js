@@ -1,14 +1,21 @@
-import './assets/main.css'
+import 'vant/lib/index.css';
+import "./assets/css/main.css";
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+// import { Tabbar, TabbarItem, Icon } from "vant";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
+import { Icon} from '@iconify/vue';
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
+app.component('Icon',Icon);
+// app.use(Tabbar);
+// app.use(TabbarItem);
+// app.use(Icon);
 
-app.use(createPinia())
-app.use(router)
+app.use(router);
 
-app.mount('#app')
+app.mount("#app");
